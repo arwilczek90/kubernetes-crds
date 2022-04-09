@@ -10,13 +10,13 @@ longhorn:
   repository: github.com/longhorn/longhorn
   crds:
     - https://raw.githubusercontent.com/longhorn/longhorn/${VERSION}/deploy/longhorn.yaml
-openebs:
-  repository: github.com/openebs/charts
-  crds:
-    - https://openebs.github.io/charts/openebs-operator.yaml
-    - https://openebs.github.io/charts/cstor-operator.yaml
-    - https://openebs.github.io/charts/zfs-operator.yaml
-    - https://openebs.github.io/charts/lvm-operator.yaml
+#openebs:
+#  repository: github.com/openebs/charts
+#  crds:
+#    - https://openebs.github.io/charts/openebs-operator.yaml
+#    - https://openebs.github.io/charts/cstor-operator.yaml
+#    - https://openebs.github.io/charts/zfs-operator.yaml
+#    - https://openebs.github.io/charts/lvm-operator.yaml
 actions-runner-controller:
   repository: github.com/actions-runner-controller/actions-runner-controller
   crds:
