@@ -1,0 +1,23 @@
+cert-manager:
+  repository: github.com/jetstack/cert-manager
+  crds:
+    - https://github.com/cert-manager/cert-manager/releases/download/${VERSION}/cert-manager.crds.yaml
+prometheus-operator:
+  repository: github.com/prometheus-operator/prometheus-operator
+  crds:
+    - https://github.com/prometheus-operator/prometheus-operator/releases/download/${VERSION}/bundle.yaml
+longhorn:
+  repository: github.com/longhorn/longhorn
+  crds:
+    - https://raw.githubusercontent.com/longhorn/longhorn/${VERSION}/deploy/longhorn.yaml
+openebs:
+  repository: github.com/openebs/charts
+  crds:
+    - https://openebs.github.io/charts/openebs-operator.yaml
+    - https://openebs.github.io/charts/cstor-operator.yaml
+    - https://openebs.github.io/charts/zfs-operator.yaml
+    - https://openebs.github.io/charts/lvm-operator.yaml
+actions-runner-controller:
+  repository: github.com/actions-runner-controller/actions-runner-controller
+  crds:
+    - https://github.com/actions-runner-controller/actions-runner-controller/releases/download/${version}/actions-runner-controller.yaml
