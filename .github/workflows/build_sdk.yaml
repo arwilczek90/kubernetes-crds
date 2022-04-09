@@ -63,6 +63,7 @@ jobs:
           IFS='|' read -r -a build_parts <<< "${{ matrix.version }}"
           mkdir -p ./_output
           poetry run python ./bin/download-crds.py ${build_parts[0]} ${build_parts[2]}
+          cat ./crd.yaml
           crd2pulumi --nodejsName ${build_parts[0]} --nodejsPath ./_output ./crd.yaml --force
           # Fix Package Name
           sed -ie "s#@pulumi/${build_parts[0]}#@arwilczek90/kubernetes-${build_parts[0]}#g" ./_output/package.json
