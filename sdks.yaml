@@ -20,4 +20,14 @@ longhorn:
 actions-runner-controller:
   repository: github.com/actions-runner-controller/actions-runner-controller
   crds:
-    - https://github.com/actions-runner-controller/actions-runner-controller/releases/download/${version}/actions-runner-controller.yaml
+    - https://github.com/actions-runner-controller/actions-runner-controller/releases/download/${VERSION}/actions-runner-controller.yaml
+grafana-agent-operator:
+  repository: github.com/grafana/agent
+  crds:
+    - https://raw.githubusercontent.com/grafana/agent/${VERSION}/production/operator/crds/monitoring.coreos.com_podmonitors.yaml
+    - https://raw.githubusercontent.com/grafana/agent/${VERSION}/production/operator/crds/monitoring.coreos.com_probes.yaml
+    - https://raw.githubusercontent.com/grafana/agent/${VERSION}/production/operator/crds/monitoring.coreos.com_servicemonitors.yaml
+    - https://raw.githubusercontent.com/grafana/agent/${VERSION}/production/operator/crds/monitoring.grafana.com_grafanaagents.yaml
+    - https://raw.githubusercontent.com/grafana/agent/${VERSION}/production/operator/crds/monitoring.grafana.com_logsinstances.yaml
+    - https://raw.githubusercontent.com/grafana/agent/${VERSION}/production/operator/crds/monitoring.grafana.com_metricsinstances.yaml
+    - https://raw.githubusercontent.com/grafana/agent/${VERSION}/production/operator/crds/monitoring.grafana.com_podlogs.yaml
