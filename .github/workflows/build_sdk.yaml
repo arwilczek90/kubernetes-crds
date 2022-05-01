@@ -70,7 +70,7 @@ jobs:
           # Fix Package Version
           sed -ie "s#\"version\": \"\"#\"version\": \"${build_parts[2]}\"#g" ./_output/package.json
           # Fix utilities.js
-          sed -ie "s#require('./package.json').version;#'';#g" ./_output/utilities.ts:
+          sed -ie "s#require('./package.json').version;#'';#g" ./_output/utilities.ts
           # Compile TSC to JS
           (cd _output && npm install --no-save @types/node @pulumi/pulumi @pulumi/kubernetes && npm run build)
           cp _output/{package.json,README.md} _output/bin/
