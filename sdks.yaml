@@ -36,4 +36,5 @@ postgres-operator:
   crds:
     - https://raw.githubusercontent.com/zalando/postgres-operator/${VERSION}/manifests/postgresql.crd.yaml
     - https://raw.githubusercontent.com/zalando/postgres-operator/${VERSION}/manifests/postgresteam.crd.yaml
-    - https://raw.githubusercontent.com/zalando/postgres-operator/master/manifests/operatorconfiguration.crd.yaml
+# Broken until https://github.com/pulumi/crd2pulumi/issues/68
+#    - https://raw.githubusercontent.com/zalando/postgres-operator/${VERSION}/manifests/operatorconfiguration.crd.yaml
