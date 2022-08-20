@@ -56,6 +56,8 @@ jobs:
           poetry-version: 1.1.12
       - name: poetry-install
         run: poetry install
+      - name: jq-install
+        run: sudo apt-get update && sudo apt-get -y install jq
       - name: crd2pulumi-install
         run: brew install pulumi/tap/crd2pulumi
       - name: crd2pulumi-generate-sdk
@@ -68,6 +70,8 @@ jobs:
           sed -ie "s#@pulumi/${build_parts[0]}#@arwilczek90/kubernetes-${build_parts[0]}#g" ./_output/package.json
           # Fix Package Version
           sed -ie "s#\"version\": \"\"#\"version\": \"${build_parts[2]}\"#g" ./_output/package.json
+          # Remove install script from package.json
+          jq 'del(.scripts.install)' package.json > tmp.$$.json && mv tmp.$$.json package.json   
           # Fix utilities.js
           ls ./_output
           sed -ie "s#require('./package.json').version;#'';#g" ./_output/utilities.ts

@@ -27,7 +27,6 @@ jobs:
 
       - name: poetry-install
         run: poetry install
-
       - id: find_new_tags
         run: echo "::set-output name=sdk_versions::$(poetry run python ./bin/find-new-tags.py ${{ github.event.inputs.since_hours }})"
 
@@ -55,6 +54,8 @@ jobs:
         uses: abatilo/actions-poetry@v2.0.0
         with:
           poetry-version: 1.1.12
+      - name: jq-install
+        run: sudo apt-get update && sudo apt-get -y install jq
       - name: poetry-install
         run: poetry install
       - name: crd2pulumi-install
@@ -69,6 +70,8 @@ jobs:
           sed -ie "s#@pulumi/${build_parts[0]}#@arwilczek90/kubernetes-${build_parts[0]}#g" ./_output/package.json
           # Fix Package Version
           sed -ie "s#\"version\": \"\"#\"version\": \"${build_parts[2]}\"#g" ./_output/package.json
+          # Remove install script from package.json
+          jq 'del(.scripts.install)' package.json > tmp.$$.json && mv tmp.$$.json package.json  
           # Fix utilities.js
           sed -ie "s#require('./package.json').version;#'';#g" ./_output/utilities.ts:
           # Compile TSC to JS

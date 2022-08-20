@@ -31,3 +31,9 @@ grafana-agent-operator:
     - https://raw.githubusercontent.com/grafana/agent/${VERSION}/production/operator/crds/monitoring.grafana.com_logsinstances.yaml
     - https://raw.githubusercontent.com/grafana/agent/${VERSION}/production/operator/crds/monitoring.grafana.com_metricsinstances.yaml
     - https://raw.githubusercontent.com/grafana/agent/${VERSION}/production/operator/crds/monitoring.grafana.com_podlogs.yaml
+postgres-operator:
+  repository: github.com/zalando/postgres-operator
+  crds:
+    - https://raw.githubusercontent.com/zalando/postgres-operator/${VERSION}/manifests/postgresql.crd.yaml
+    - https://raw.githubusercontent.com/zalando/postgres-operator/${VERSION}/manifests/postgresteam.crd.yaml
+    - https://raw.githubusercontent.com/zalando/postgres-operator/master/manifests/operatorconfiguration.crd.yaml
